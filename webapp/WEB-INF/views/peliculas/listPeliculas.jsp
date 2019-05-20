@@ -1,5 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,12 +10,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Listado de Peliculas</title>
-    
-    <spring:url value="/resources" var="urlResources"></spring:url>
-    <spring:url value="/" var="urlRoot"></spring:url>
-    
-    <link href="${urlResources}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${urlResources}/css/theme.css" rel="stylesheet">
     
   </head>
 
@@ -27,13 +22,13 @@
     
     <c:if test="${mensaje!=null}">
     
-    	<div class="alert alert-success" rol="alert">${mensaje}</div>
+    	<div class="alert alert-success" role="alert">${mensaje}</div>
 
 	</c:if>
 
       <h3>Listado de Peliculas</h3>
       
-      <a href="${urlRoot}peliculas/create" class="btn btn-success" role="button" title="Nueva Pelicula" >Nueva</a><br><br>
+      <a href="${urlRoot}create" class="btn btn-success" role="button" title="Nueva Pelicula" >Nueva</a><br><br>
 	
       <div class="table-responsive">
         <table class="table table-hover table-striped table-bordered">
@@ -81,10 +76,5 @@
 
     </div> <!-- /container -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
-    <script src="${urlResources}/js/bootstrap.min.js"></script>     
   </body>
 </html>

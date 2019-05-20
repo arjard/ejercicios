@@ -15,9 +15,6 @@
 
 <spring:url value="/resources" var="urlResources"></spring:url>
 
-<link href="${urlResources}/css/bootstrap.min.css" rel="stylesheet">
-<link href="${urlResources}/css/theme.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -217,11 +214,5 @@
 	</div>
 	<!-- /container -->
 
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="${urlResources}/js/bootstrap.min.js"></script>
 </body>
 </html>

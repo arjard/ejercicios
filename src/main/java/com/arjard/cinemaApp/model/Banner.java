@@ -56,7 +56,11 @@ public class Banner {
 	public void setEstatus(String estatus) {
 		this.estatus = estatus;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Banner [id=" + id + ", titulo=" + titulo + ", fecha=" + fecha + ", archivo=" + archivo + ", estatus="
+				+ estatus + "]";
+	}
 	
 }

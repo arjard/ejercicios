@@ -7,7 +7,6 @@ import com.arjard.cinemaApp.model.Noticia;
 @Service
 public class NoticisServiceImpl implements NoticiaService{
 
-	@Override
 	public boolean saveNotice(Noticia noticia) {
 		
 		System.out.println(noticia);

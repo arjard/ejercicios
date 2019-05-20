@@ -70,14 +70,12 @@ public class PeliculaServiceImpl implements PeliculaService{
 	
 	}
 
-	@Override
 	public List<Pelicula> getAllPeliculas() {
 		fillPeliculas();
 		
 		return peliculas;
 	}
 
-	@Override
 	public List<Pelicula> getPeliculasByDate(String date) {
 		
 		fillPeliculas();
@@ -100,7 +98,6 @@ public class PeliculaServiceImpl implements PeliculaService{
 		return peliculas;
 	}
 
-	@Override
 	public Pelicula getPeliculaById(int id) {
 
 		for(Pelicula p : peliculas) {
@@ -112,7 +109,6 @@ public class PeliculaServiceImpl implements PeliculaService{
 		return null;
 	}
 
-	@Override
 	public boolean insertPelicula(Pelicula pelicula) {
 		
 		peliculas.add(pelicula);

@@ -1,6 +1,5 @@
 package com.arjard.cinemaApp.controller;
 
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -15,6 +14,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,15 +32,27 @@ public class PeliculaController {
 	@Autowired
 	private PeliculaService peliculaService;
 
-	@GetMapping("/create")
-	public String createPelicula() {
+	@GetMapping(value="/create")
+	public String createPelicula(@ModelAttribute Pelicula pelicula) {
 		return "/peliculas/formPelicula";
 	}
 	
-	@PostMapping("/save")
-	public String savePalicula(Pelicula pelicula, BindingResult result, RedirectAttributes attributes
+	/**
+	 * @param pelicula
+	 * @param result
+	 * @param attributes
+	 * @param multipart
+	 * @param request
+	 * 
+	 * nos permite guardar una nueva pelicula
+	 * 
+	 * @return
+	 */
+	@PostMapping(value="/save")
+	public String savePalicula(@ModelAttribute Pelicula pelicula, BindingResult result, RedirectAttributes attributes
 			, @RequestParam("archivoImagen") MultipartFile multipart, HttpServletRequest request) {
 		
+//		Esto aplica cuando existen ecepciones en el bindeo del modelo
 		if(result.hasErrors()) {
 			
 			for(ObjectError o : result.getAllErrors()) {
@@ -50,19 +62,22 @@ public class PeliculaController {
 			return "/peliculas/formPelicula";
 		}
 
+//		Guardamos los archivos de imagen de manera fisica temporalmente
 		if(!multipart.isEmpty()) {
 			pelicula.setImagen(Util.saveImage(multipart, request));
 		}
 		
 		peliculaService.insertPelicula(pelicula);
 		
+//		El RedirectAttributes nos permite redirigir parametros cuando la vista se redireccion
 		attributes.addFlashAttribute("mensaje", "Pelicula introducida");
 
+//		Redirecionamos pagina
 		return "redirect:/peliculas/list";
 	}
 	
 	
-	@GetMapping("/list")
+	@GetMapping(value="/list")
 	public String goListPelicula(Model model) {
 		
 		model.addAttribute("peliculas", peliculaService.getAllPeliculas());

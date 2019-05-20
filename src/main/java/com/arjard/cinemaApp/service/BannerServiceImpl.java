@@ -23,6 +23,7 @@ public class BannerServiceImpl implements BannerService{
 		banner2.setId(1);
 		banner2.setTitulo("bellaBestia");
 		banner2.setArchivo("slide2.jpg");
+		banner2.setEstatus("Desactivo");
 		
 		Banner banner3 = new Banner();
 		banner3.setId(2);
@@ -41,13 +42,12 @@ public class BannerServiceImpl implements BannerService{
 		
 	}
 
-	@Override
 	public boolean insertBanner(Banner banner) {
 		// TODO Auto-generated method stub
-		return false;
+		return banners.add(banner);
 	}
 
-	@Override
+
 	public List<Banner> getAllBanner() {
 		// TODO Auto-generated method stub
 		return banners;

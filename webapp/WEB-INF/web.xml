@@ -7,6 +7,7 @@
 		<servlet-name>dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
+<!-- 		El param-name no es cualquiera si no que hace referenca a un parametro de spring -->
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/Spring/dispatcher-servlet.xml</param-value>
 		</init-param>

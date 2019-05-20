@@ -1,7 +1,20 @@
 
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
-<<spring:url value="/" var="urlRoot" />
+    <spring:url value="/resources" var="urlResources"></spring:url>
+    <spring:url value="/" var="urlRoot"></spring:url>
+    
+    <link href="${urlResources}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${urlResources}/css/theme.css" rel="stylesheet">
+    
+              <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <script src="${urlResources}/js/bootstrap.min.js"></script>     
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<spring:url value="/" var="urlRoot" />
     <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
