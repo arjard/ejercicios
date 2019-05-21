@@ -10,7 +10,8 @@ public class Pelicula {
 	private String genero;
 	private String imagen;
 	private String fechaEstreno;
-	private String estatus;
+	private String estatus;	
+	private Detalle detalle;
 	
 	public Pelicula() {
 		super();
@@ -81,6 +82,14 @@ public class Pelicula {
 
 	public void setEstatus(String estatus) {
 		this.estatus = estatus;
+	}
+
+	public Detalle getDetalle() {
+		return detalle;
+	}
+
+	public void setDetalle(Detalle detalle) {
+		this.detalle = detalle;
 	}
 
 	@Override

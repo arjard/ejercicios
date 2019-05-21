@@ -10,5 +10,6 @@ public interface PeliculaService {
 	public List<Pelicula> getPeliculasByDate(String date);
 	public Pelicula getPeliculaById(int id);
 	public boolean insertPelicula(Pelicula pelicula);
+	public List<String> getGenero();
 
 }

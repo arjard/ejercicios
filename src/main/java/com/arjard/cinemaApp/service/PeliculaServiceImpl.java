@@ -116,6 +116,23 @@ public class PeliculaServiceImpl implements PeliculaService{
 		return false;
 	}
 
+	@Override
+	public List<String> getGenero() {
+		
+		List<String> generos = new ArrayList<String>();
+		generos.add("Accion");
+		generos.add("Aventura");
+		generos.add("Clasicas");
+		generos.add("Comedia Romantica");
+		generos.add("Drama");
+		generos.add("Terror");
+		generos.add("Infantil");
+		generos.add("Accion y aventura");
+		generos.add("Romantica");
+		
+		return generos;
+	}
+
 
 
 }

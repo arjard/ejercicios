@@ -69,18 +69,10 @@
           </div>
           <div class="col-sm-3">
             <div class="form-group">
-              <label for="genero" class="control-label">Genero</label>              
-              <form:select id="genero" path="genero" class="form-control">
-                <form:option value="Accion">Accion</form:option>
-                <form:option value="Aventura">Aventura </form:option>
-                <form:option value="Clasicas">Clasicas</form:option>                  
-                <form:option value="Comedia Romantica">Comedia Romantica</form:option>                  
-                <form:option value="Drama">Drama</form:option>                  
-                <form:option value="Terror">Terror</form:option>                  
-                <form:option value="Infantil">Infantil</form:option>                  
-                <form:option value="Accion y Aventura">Accion y Aventura</form:option>                  
-                <form:option value="Romantica">Romantica</form:option>                  
-              </form:select>             
+              <label for="genero" class="control-label">Genero</label>        
+              
+              <form:select id="genero" path="genero" class="form-control" items="${generos}"></form:select>
+
             </div> 
           </div>         
         </div>
@@ -110,8 +102,7 @@
             </div> 
           </div>
         </div>
-
-        <!--  
+<!-- ///////////////////////////////// Detalles de la pelicula /////////////////////////////////////////// -->
         <div class="page-header">
             <h3 class="blog-title"><span class="label label-success">Detalles</span></h3>
         </div>
@@ -120,20 +111,20 @@
           <div class="col-sm-3">
             <div class="form-group">
               <label for="director">Director</label>
-              <input type="text" class="form-control" name="director" id="director" required="required" />
+              <form:input type="text" class="form-control" path="detalle.director" id="director" required="required" />
             </div>  
           </div>
           <div class="col-sm-3">
             <div class="form-group">
               <label for="actores">Actores</label>
-              <input type="text" class="form-control" name="actores" id="actores" required="required" />
+              <form:input type="text" class="form-control" path="detalle.actores" id="actores" required="required" />
             </div>  
           </div>
 
           <div class="col-sm-6">
             <div class="form-group">
               <label for="trailer">URL del Trailer (Youtube)</label>
-              <input type="text" class="form-control" name="trailer" id="trailer" placeholder="URL completa del video de YOUTUBE" required="required" />
+              <form:input type="text" class="form-control" path="detalle.trailer" id="trailer" placeholder="URL completa del video de YOUTUBE" required="required" />
             </div>  
           </div> 
         </div> 
@@ -142,11 +133,10 @@
           <div class="col-sm-6">
             <div class="form-group">
               <label for="sinopsis">Sinopsis</label>
-              <textarea class="form-control" rows="5" name="sinopsis" id="sinopsis"></textarea>
+              <form:textarea class="form-control" rows="5" path="detalle.sinopsis" id="sinopsis"></form:textarea>
             </div> 
           </div> 
         </div>
-        -->
         
         <button type="submit" class="btn btn-danger" >Guardar</button>
       </form:form> 
