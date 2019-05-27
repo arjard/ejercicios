@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.arjard.cinemaApp.model.Genero;
 import com.arjard.cinemaApp.model.Pelicula;
 
 @Service
@@ -117,18 +118,18 @@ public class PeliculaServiceImpl implements PeliculaService{
 	}
 
 	@Override
-	public List<String> getGenero() {
+	public List<Genero> getGenero() {
 		
-		List<String> generos = new ArrayList<String>();
-		generos.add("Accion");
-		generos.add("Aventura");
-		generos.add("Clasicas");
-		generos.add("Comedia Romantica");
-		generos.add("Drama");
-		generos.add("Terror");
-		generos.add("Infantil");
-		generos.add("Accion y aventura");
-		generos.add("Romantica");
+		List<Genero> generos = new ArrayList<Genero>();
+		generos.add(Genero.ACCION);
+		generos.add(Genero.AVENTURA);
+		generos.add(Genero.CLASICAS);
+		generos.add(Genero.COMEDIA);
+		generos.add(Genero.DRAMA);
+		generos.add(Genero.TERROR);
+		generos.add(Genero.INFANTIL);
+		generos.add(Genero.SUSPENSO);
+		generos.add(Genero.ROMANTICA);
 		
 		return generos;
 	}

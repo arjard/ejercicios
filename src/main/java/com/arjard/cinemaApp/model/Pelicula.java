@@ -14,10 +14,10 @@ public class Pelicula {
 	private Detalle detalle;
 	
 	public Pelicula() {
-		super();
-		
 		this.imagen = "cinema.png";
 		this.estatus = "Activa";
+		this.duracion = 100;
+		this.clasificacion = "B";
 	}
 
 	public int getId() {

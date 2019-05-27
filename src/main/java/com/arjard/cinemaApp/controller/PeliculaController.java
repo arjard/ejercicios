@@ -53,7 +53,7 @@ public class PeliculaController {
 	 */
 	@PostMapping(value="/save")
 	public String savePalicula(@ModelAttribute Pelicula pelicula, BindingResult result, RedirectAttributes attributes
-			, @RequestParam("archivoImagen") MultipartFile multipart, HttpServletRequest request) {
+			, @RequestParam("fileupload") MultipartFile multipart, HttpServletRequest request) {
 		
 //		Esto aplica cuando existen ecepciones en el bindeo del modelo
 		if(result.hasErrors()) {
