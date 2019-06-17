@@ -1,6 +1,6 @@
 package com.arjard.cinemaApp.model;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class Contacto {
 	
@@ -8,8 +8,8 @@ public class Contacto {
 	private String nombre;
 	private String email;
 	private int rating;
-	private Genero[] generos;
-	private String[] notificaciones;
+	private List<Genero> generos;
+	private List<Notificacion> notificaciones;
 	private String comentarios;
 	
 	public Contacto() {
@@ -48,19 +48,20 @@ public class Contacto {
 		this.rating = rating;
 	}
 
-	public Genero[] getGeneros() {
+	public List<Genero> getGeneros() {
 		return generos;
 	}
 
-	public void setGeneros(Genero[] generos) {
+	public void setGeneros(List<Genero> generos) {
 		this.generos = generos;
 	}
 
-	public String[] getNotificaciones() {
+	
+	public List<Notificacion> getNotificaciones() {
 		return notificaciones;
 	}
 
-	public void setNotificaciones(String[] notificaciones) {
+	public void setNotificaciones(List<Notificacion> notificaciones) {
 		this.notificaciones = notificaciones;
 	}
 
@@ -75,8 +76,8 @@ public class Contacto {
 	@Override
 	public String toString() {
 		return "Contacto [id=" + id + ", nombre=" + nombre + ", email=" + email + ", rating=" + rating + ", generos="
-				+ Arrays.toString(generos) + ", notificaciones=" + Arrays.toString(notificaciones) + ", comentarios="
-				+ comentarios + "]";
+				+ generos + ", notificaciones=" + notificaciones + ", comentarios=" + comentarios + "]";
 	}
+
 	
 }
