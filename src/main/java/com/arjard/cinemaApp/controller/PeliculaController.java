@@ -88,6 +88,7 @@ public class PeliculaController {
 		return "/peliculas/listPeliculas";
 	}
 	
+	
 	@InitBinder
 	public void initBinding(WebDataBinder binder) {
 		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
